@@ -13,3 +13,22 @@ int main()
     printf("area=%f",area);
 	return 0;
 }
+/*
+#include <stdio.h>
+#include <math.h>
+int main ( )
+ {	
+   double a,b,c,s,area;                       // 定义各变量，均为double型 
+   //printf("please input a,b,c:\n");               //提示用户输入
+	scanf("%lf %lf %lf",&a,&b,&c);             //从键盘输入三角形的三边 
+    if(a+b>c && a+c>b && b+c>a)
+    {
+        s=(a+b+c)/2;
+        area=sqrt(s*(s-a)*(s-b)*(s-c));
+        printf("area=%f",area);
+    }
+    else 
+    printf("is not triangle!");
+	return 0;
+ }  
+*/
