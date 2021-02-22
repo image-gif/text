@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int n,capital;
+    float rate,deposit;
+    scanf("%f",&rate);
+    scanf("%d",&n);
+    scanf("%d",&capital);
+    deposit=capital*pow(1+rate,n);//pow()函数，计算1+rate的n次方
+    printf("%d年本利之和:",n);
+    printf("%.2f\n",deposit);
+      return 0;
+}
