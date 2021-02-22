@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	char ch;
+	//printf("请输入一个字符：");
+	scanf("%c",&ch);
+    /*
+    if(ch>='a' && ch<='z')
+    {
+        printf("是小写英文字母，循环加6为%c",(ch-'a'+6)%26+'a');//法一，循环输出字符ch后第6位
+    }
+    else
+    {
+        printf("不是小写英文字母");
+    }
+    */
+    //法二
+    if(ch>='a' && ch<='z'-6)
+    {
+        printf("是小写英文字母，循环加6为%c",ch+6);
+    }
+    else
+    if(ch>='z'-6 && ch<='z')
+    {
+        printf("是小写英文字母，循环加6为%c",ch-26+6);
+    }
+    else 
+    {
+        printf("不是小写英文字母");
+    }
+	return 0;
+}
