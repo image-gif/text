@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+	int num,zsum=0,fsum=0,i=1;
+	//循环输入与求和,用do…while循环实现输入一批整数，以零为结束标志，统计正负数个数。
+    do 
+    {
+        scanf("%d",&num);
+        if(num>0)
+        zsum++;
+        else if(num<0)
+        fsum++;
+    }while(num != 0);
+    printf("正数个数为%d\n",zsum);
+    printf("负数个数为%d\n",fsum);
+	return 0;
+}
