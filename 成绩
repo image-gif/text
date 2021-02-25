@@ -1,0 +1,75 @@
+#include <stdio.h>
+int main()
+{	
+	double temp,sum,avg,max,min;
+	int i=0;
+    sum=0;
+    max=0;
+    min=100;
+	do
+    {
+        scanf("%lf",&temp);
+        if(temp>=0 && temp<=100)
+        {
+            sum += temp;
+            i++;
+            if(temp>=max)
+            max=temp;
+            if(temp<=min)
+            min=temp;
+        }
+    }while(temp != -1);
+	if(i!=0)
+	{
+		avg=sum/i;	
+		printf("全班一共有学生:%d\n",i);
+		printf("全班平均分:%.1lf\n",avg);
+		printf("全班最高分:%.1lf\n",max);
+		printf("全班最低分:%.1lf\n",min);
+	}
+	else
+		printf("输入了0个合法的分数\n");
+	return 0;
+}
+/*
+#include <stdio.h>
+int main()
+{    
+    double temp,sum,avg,max,min;
+    int i=0;
+    /*********Begin*********/
+    sum=0;
+    max=0;
+    min=100;    
+    while(1)
+    {    
+        scanf("%lf",&temp);
+        if(temp>100 || ( temp<0 && temp!=-1)     )
+        {
+            continue;
+        }
+        if(temp==-1)
+        {
+            break;
+        }
+        if(temp>=max)
+            max=temp;
+        if(temp<=min)
+            min=temp;
+        sum=sum+temp;
+        i++;        
+    }
+      /*********End**********/ 
+    if(i!=0)
+    {
+        avg=sum/i;    
+        printf("全班一共有学生:%d\n",i);
+        printf("全班平均分:%.1lf\n",avg);
+        printf("全班最高分:%.1lf\n",max);
+        printf("全班最低分:%.1lf\n",min);
+    }
+    else
+        printf("输入了0个合法的分数\n");
+    return 0;
+}
+*/
