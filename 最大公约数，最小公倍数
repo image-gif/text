@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main(void)
+{  
+    /*
+    int m,n,gmax,gmin,t,q;
+    scanf("%d%d",&m,&n);
+    t = m%n;
+    q = m*n;
+    while(t)
+    {
+        m=n;
+        n=t;
+        t=m%n;
+    }
+    */
+    int m,n,q;
+    
+    scanf("%d%d",&m,&n);
+    q=m*n;
+    while(1)
+    {
+        if(m>n)
+        {
+            m=m-n;
+        }
+        if(m<n)
+        {
+            n=n-m;
+        }
+        if(m==n)
+        break;
+    }
+    printf("最大公约数是:%d\n",n);
+    printf("最小公倍数是:%d",q/n);
+    return 0;
+}
