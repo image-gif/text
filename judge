@@ -1,0 +1,81 @@
+#include<stdio.h>
+#define N 20
+int main()
+{
+
+	int a[N]={ 0 }, b[N]={ 0 };
+	int anum,bnum,c[N+N];
+	int *pi, *pj,*pk;
+	scanf("%d",&anum);   //输入数组a元素个数
+	for(pi=a;pi<a+anum;pi++)
+	{
+		scanf("%d",pi);
+        
+	}
+	scanf("%d",&bnum);   //输入数组b元素个数
+	for(pj=b;pj<b+bnum;pj++)
+	{
+		scanf("%d",pj);
+	}
+	
+	/***** 在数组a和b都有数据时比较两个数组 *****/
+	/********** Begin *********/
+    pi=a;pj=b;pk=c;
+    while(pi<a+anum&&pj<b+bnum)
+    {
+        if(*pi<*pj)
+        {
+            *pk=*pi;
+            pi++;
+            pk++;
+            
+        }
+        else
+        {
+            *pk=*pj;
+            pj++;
+            pk++;
+        }
+        
+    }
+
+	/********** End **********/
+
+	/***** 如果数组a还有数据 *****/
+	/********** Begin *********/
+	if(pi<a+anum)
+    {
+        while(pi<a+anum)
+        {
+            *pk=*pi;
+            pi++;
+            pk++;
+        }
+    }
+	/********** End **********/
+
+	/***** 如果数组b还有数据 *****/
+	/********** Begin *********/
+	if(pj<b+bnum)
+    {
+        while(pj<b+bnum)
+        {
+            *pk=*pj;
+            pj++;
+            pk++;
+        }
+    }
+	/********** End **********/
+	
+	/***** 输出数组c *****/
+	/********** Begin *********/
+    for(pk=c;pk<c+anum+bnum;pk++)
+    {
+        printf("%d",*pk);
+        if(pk<c+anum+bnum-1)
+        printf(" ");
+    }
+	/********** End **********/
+	printf("\n");
+	return 0;
+}
