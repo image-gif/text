@@ -1,0 +1,73 @@
+#include<stdio.h>
+#define N 10
+void inputarr (int *p,int n);
+void outputarr (int *p,int n);
+void swap(int *a,int *b);
+void func(int m,int n,int *p);
+
+int main()
+{
+	int i,j,n,m;
+    int x=1,y=0;
+	int a[N];
+	//printf("输入数组元素：\n");
+	inputarr (a,N);
+	//printf("请输入起始位置:");
+	scanf("%d",&m);
+	//printf("请输入逆序处理的元素个数:");
+	scanf("%d",&n);
+	func(m,n,a);
+    
+	outputarr(a,N);
+   return 0;
+}
+/********** Begin **********/
+void inputarr (int array[ ],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    scanf("%d",&array[i]);
+}
+void func(int m,int n,int a[N])
+{
+    int i,j;
+    void swap(int *a,int *b);
+    if(m<1 || m>N)
+    {
+    printf("m不合法\n");
+    return;
+    }
+    else if(n>N || n<1 || n+m>N+1)
+    {
+        printf("n不合法\n");
+        return;
+    }
+    else
+    {
+        for(i=m-1,j=n+m-2;i<j;i++,j--)
+        {
+            swap((a+i),(a+j));
+        }
+    }
+}
+void swap(int *a,int *b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void  outputarr (int array[ ],int n)
+{
+    int i;
+    for(i=0;i<n;i++)
+    {
+        printf("%d",array[i]);
+        if(i<n-1)
+        {
+            printf(" ");
+        }
+    }
+}
+
+ /********** End **********/
